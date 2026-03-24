@@ -1,0 +1,8 @@
+.profiles {}
+
+.profiles .profile {
+    img {
+        max-width: 20%;
+        height: auto;
+    }
+}
