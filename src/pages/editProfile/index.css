@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    background-color: rgb(16, 16, 16);
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.buttons{
+    display: flex;
+    gap: 30px;
+}
+
+.button{
+    margin-top: 40px;
+    padding: 10px 20px;
+    border: 1px solid #aaa;
+    background: transparent;
+    color: #aaa;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.button:hover {
+  color: white;
+  border-color: white;
+}
+
+.save{
+    color: black;
+    background-color: #fff;
+    font-weight: 800;
+}
+
+.save:hover{
+    color: #fff;
+    background-color: #E50914;
+    border-color: #E50914;
+}

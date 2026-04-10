@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #141414;
+    background-color: rgb(16, 16, 16);
     color: white;
     font-family: Arial, sans-serif;
     display: flex;
@@ -24,6 +24,8 @@ h1 {
     margin-bottom: 40px;
 }
 
+
+/* Estilização dos Perfis */
 .profiles {
     display: flex;
     gap: 40px;
@@ -33,6 +35,7 @@ h1 {
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s;
+    position: relative;
 }
 
 .profile:hover {
@@ -52,6 +55,40 @@ h1 {
 }
 
 
+/* Editar Perfil */
+.img-container {
+  position: relative;
+}
+
+.img-container img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.edit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  font-size: 30px;
+  color: white;
+
+  display: none;
+}
+
+.editing .edit-icon {
+  display: block;
+}
+
+.editing .img-container img {
+  filter: brightness(0.4) blur(2px);
+}
+
+
+/* Botão Gerenciar Perfis */
 .button{
     margin-top: 40px;
     padding: 10px 20px;
