@@ -43,7 +43,7 @@ function renderProfiles() {
     div.addEventListener('click', () => {
       if (editMode) {
         localStorage.setItem('profileIndex', index)
-        window.location.href = './pages/editProfile/index.html'
+        window.location.href = '/src/pages/editProfile/index.html'
       } else {
         selectProfile(profile.nome)
       }
@@ -52,12 +52,29 @@ function renderProfiles() {
     container.appendChild(div)
   })
 
-  addAddButton()
+  addAddButton(profiles.length)
 }
 
 
 // Adicionar Perfil
-function addAddButton() {
+const avatars = {
+  adult: [
+    "/public/assets/perfil-1.jpg",
+    "/public/assets/perfil-2.jpg",
+    "/public/assets/perfil-3.jpg",
+    "/public/assets/perfil-4.jpg"
+  ],
+  kids: [
+    "/public/assets/kids-1.jpg",
+    "/public/assets/kids-2.png",
+    "/public/assets/kids-3.png",
+    "/public/assets/kids-4.png"
+  ]
+}
+
+const MAX_PROFILES = 5;
+
+function addAddButton(totalProfiles) {
   const container = document.querySelector('.profiles')
 
   const div = document.createElement('div')
@@ -68,24 +85,77 @@ function addAddButton() {
     <p>Adicionar Perfil</p>
   `
 
-  div.addEventListener('click', () => {
-    const name = prompt('Nome do perfil:')
-
-    if (!name) return
-
-    const profiles = JSON.parse(localStorage.getItem('profiles'))
-
-    profiles.push({
-      nome: name,
-      img: "https://i.pravatar.cc/150?img=" + Math.floor(Math.random()*70)
+  if (totalProfiles >= MAX_PROFILES) {
+    div.classList.add('disabled')
+  } else {
+    div.addEventListener('click', () => {
+      openModal()
     })
-
-    localStorage.setItem('profiles', JSON.stringify(profiles))
-
-    renderProfiles()
-  })
+  }
 
   container.appendChild(div)
+}
+
+function openModal() {
+  document.getElementById('imageModal').classList.remove('hidden');
+  renderImages();
+}
+
+function closeModal(event) {
+  if (!event || event.target.id === 'imageModal') {
+    document.getElementById('imageModal').classList.add('hidden');
+  }
+}
+
+function renderImages() {
+  const grid = document.getElementById('imagesGrid');
+  const isKids = document.getElementById('isKids').checked;
+
+  const list = isKids ? avatars.kids : avatars.adult;
+
+  grid.innerHTML = '';
+
+  list.forEach(img => {
+    const image = document.createElement('img');
+    image.src = img;
+
+    image.addEventListener('click', () => {
+      selectImage(img);
+    });
+
+    grid.appendChild(image);
+  });
+}
+
+document.getElementById('isKids').addEventListener('change', renderImages);
+
+let selectedImage = null;
+
+function selectImage(src) {
+  selectedImage = src;
+}
+
+function createProfile() {
+  const name = document.getElementById('profileName').value;
+  const isKids = document.getElementById('isKids').checked;
+
+  if (!name || !selectedImage) {
+    alert('Preencha tudo!');
+    return;
+  }
+
+  const profiles = JSON.parse(localStorage.getItem('profiles'));
+
+  profiles.push({
+    nome: name,
+    img: selectedImage,
+    kids: isKids
+  });
+
+  localStorage.setItem('profiles', JSON.stringify(profiles));
+
+  closeModal();
+  renderProfiles();
 }
 
 

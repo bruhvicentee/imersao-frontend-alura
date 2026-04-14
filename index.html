@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/index.css">
+    <title>Netflix</title>
+</head>
+
+<body>
+    <nav class="logo">
+        <img src="/public/assets/icons.jpg" alt="Logo Netflix">
+    </nav>
+    
+    <h1>Quem está assistindo?</h1>
+    
+    <main class="profiles">
+
+    </main>
+
+    <button class="button">
+        Gerenciar perfis
+    </button>
+    
+    <section id="imageModal" class="modal hidden" onclick="closeModal(event)">
+        <div class="modal-content">
+            <h2>Criar Perfil</h2>
+
+            <div class="input-group">
+                <input type="text" id="profileName" required>
+                <label for="profileName">Nome do Perfil</label>
+            </div>
+
+            <br>
+
+            <label>
+            <input type="checkbox" id="isKids">
+                Perfil infantil
+            </label>
+
+            <br><br>
+
+            <h3>Escolha um avatar:</h3>
+
+            <div class="images-grid" id="imagesGrid"></div>
+
+            <br>
+
+            <button class="popup-button" onclick="createProfile()">Criar Perfil</button>
+            <button class="popup-button" onclick="closeModal()">Cancelar</button>
+        </div>
+    </section>
+
+    <script src="/src/script.js"></script>
+</body>
+
+</html>

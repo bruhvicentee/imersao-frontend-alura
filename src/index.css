@@ -38,6 +38,12 @@ h1 {
     position: relative;
 }
 
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 .profile:hover {
     transform: scale(1.1);
 }
@@ -101,6 +107,95 @@ h1 {
 }
 
 .button:hover {
+  color: white;
+  border-color: white;
+}
+
+
+/* Popup Adicionar Perfil */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #141414;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.input-group {
+  position: relative;
+  width: 300px;
+  margin-top: 0px;
+}
+
+#profileName {
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: #333;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.input-group label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+#profileName:focus + label,
+#profileName:valid + label {
+  top: 8px;
+  font-size: 12px;
+}
+
+#profileName:focus {
+  background: #444;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  gap: 10px;
+}
+
+.images-grid img {
+  width: 80px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.popup-button{
+    padding: 10px 15px;
+    border: 1px solid #aaa;
+    background: transparent;
+    color: #aaa;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.popup-button:hover {
   color: white;
   border-color: white;
 }
