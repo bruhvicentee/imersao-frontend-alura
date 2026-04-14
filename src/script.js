@@ -45,7 +45,10 @@ function renderProfiles() {
         localStorage.setItem('profileIndex', index)
         window.location.href = '/src/pages/editProfile/index.html'
       } else {
-        selectProfile(profile.nome)
+        //selectProfile(profile.nome)
+
+        localStorage.setItem('activeProfile', JSON.stringify(profile))
+        window.location.href = '/src/pages/content/index.html'
       }
     })
 

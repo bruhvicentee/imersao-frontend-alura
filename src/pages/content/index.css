@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(16, 16, 16);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+.row{
+    padding: 30px;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.movies {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.movies::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Setas de Navegação */
+.arrow {
+  position: absolute;
+  z-index: 10;
+
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 24px;
+
+  height: 100%;
+  width: 40px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+
+
+.movie-card {
+  position: relative;
+  width: 150px;
+  height: 225px;
+
+  flex: 0 0 auto;
+
+  overflow: hidden;
+  border-radius: 6px;
+
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.trailer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.movie-card.active {
+  width: 320px;
+  height: 225px;
+  z-index: 100;
+}
+
+.movie-card.active .poster {
+  opacity: 0;
+}
+
+.movie-card.active .trailer-container {
+  opacity: 1;
+}
+
+.trailer {
+  width: 100%;
+  height: 100%;
+}

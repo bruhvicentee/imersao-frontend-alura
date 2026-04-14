@@ -29,12 +29,6 @@ function selectImage(imgSrc) {
 }
 
 
-//Alterar Idioma - (create /src/config/translation.js)
-function toggleLanguageMenu() {
-  document.getElementById('languageMenu').classList.toggle('hidden')
-}
-
-
 // Alterar classificação etária
 function openRatingOptions() {
   const escolherInfantil = confirm(
@@ -68,12 +62,12 @@ function save() {
 
   localStorage.setItem('profiles', JSON.stringify(profiles))
 
-  window.location.href = '../../../index.html'
+  window.location.href = '../../index.html'
 }
 
 
 function cancel() {
-  window.location.href = '../../../index.html'
+  window.location.href = '../../index.html'
 }
 
 
@@ -86,5 +80,5 @@ function remove() {
 
   localStorage.setItem('profiles', JSON.stringify(profiles))
 
-  window.location.href = '../../../index.html'
+  window.location.href = '../../index.html'
 }

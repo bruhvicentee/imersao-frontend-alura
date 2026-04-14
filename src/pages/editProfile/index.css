@@ -113,31 +113,7 @@ main {
   color: white;
   border: 1px solid #aaa;
   padding: 5px 10px;
-  cursor: pointer;
-}
-
-.language-menu {
-  position: absolute;
-  top: 35px;
-  left: 0;
-
-  background: black;
-  border: 1px solid #333;
-
-  width: 120px;
-}
-
-.language-menu p {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.language-menu p:hover {
-  background: #333;
-}
-
-.hidden {
-  display: none;
+  cursor: default;
 }
 
 
@@ -188,9 +164,6 @@ main {
 }
 
 
-
-.classificacao-etaria{
-}
 
 .classificacao{
     display: inline-block;
