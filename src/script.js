@@ -2,9 +2,9 @@ function selectProfile(profile) {
   localStorage.setItem("activeProfile", JSON.stringify(profile))
 
   if (profile.kids) {
-    window.location.href = "/src/pages/contentKids/index.html"
+    window.location.href = "src/pages/contentKids/index.html"
   } else {
-    window.location.href = "/src/pages/content/index.html"
+    window.location.href = "src/pages/content/index.html"
   }
 }
 
@@ -13,12 +13,12 @@ if (!localStorage.getItem('profiles')) {
   const defaultProfiles = [
     {
       nome: "Bruna",
-      img: "/public/assets/perfil-1.jpg",
+      img: "https://bruhvicentee.github.io/netflix-clone/public/assets/perfil-1.jpg",
       kids: false
     },
     {
       nome: "Lulu",
-      img: "/public/assets/kids-1.jpg",
+      img: "https://bruhvicentee.github.io/netflix-clone/public/assets/kids-1.jpg",
       kids: true
     }
   ]
@@ -49,7 +49,7 @@ function renderProfiles() {
     div.addEventListener('click', () => {
       if (editMode) {
         localStorage.setItem('profileIndex', index)
-        window.location.href = '/src/pages/editProfile/index.html'
+        window.location.href = 'src/pages/editProfile/index.html'
       } else {
         selectProfile(profile)
       }
@@ -65,16 +65,16 @@ function renderProfiles() {
 // Adicionar Perfil
 const avatars = {
   adult: [
-    "/public/assets/perfil-1.jpg",
-    "/public/assets/perfil-2.jpg",
-    "/public/assets/perfil-3.jpg",
-    "/public/assets/perfil-4.jpg"
+    "https://bruhvicentee.github.io/netflix-clone/public/assets/perfil-1.jpg",
+    "https://bruhvicentee.github.io/netflix-clone/public/assets/perfil-2.jpg",
+    "https://bruhvicentee.github.io/netflix-clone/public/assets/perfil-3.jpg",
+    "https://bruhvicentee.github.io/netflix-clone/public/assets/perfil-4.jpg"
   ],
   kids: [
-    "/public/assets/kids-1.jpg",
-    "/public/assets/kids-2.png",
-    "/public/assets/kids-3.png",
-    "/public/assets/kids-4.png"
+    "https://bruhvicentee.github.io/netflix-clone/public/assets/kids-1.jpg",
+    "https://bruhvicentee.github.io/netflix-clone/public/assets/kids-2.png",
+    "https://bruhvicentee.github.io/netflix-clone/public/assets/kids-3.png",
+    "https://bruhvicentee.github.io/netflix-clone/public/assets/kids-4.png"
   ]
 }
 
@@ -87,7 +87,7 @@ function addAddButton(totalProfiles) {
   div.classList.add('profile')
 
   div.innerHTML = `
-    <img src="/public/assets/addProfile.png">
+    <img src="public/assets/addProfile.png">
     <p>Adicionar Perfil</p>
   `
 

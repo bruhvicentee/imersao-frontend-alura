@@ -3,7 +3,7 @@ function Navbar(profile = "") {
     <header class="navbar">
 
       <nav class="logo" id="logo">
-        <img src="/public/assets/icon-netflix.png" alt="Logo Netflix">
+        <img src="https://bruhvicentee.github.io/netflix-clone/public/assets/icon-netflix.png" alt="Logo Netflix">
       </nav>
 
       <div class="nav-right">
@@ -129,6 +129,6 @@ function loadNavbar(profile) {
   container.innerHTML = Navbar(profile)
 
   document.getElementById("logo").addEventListener("click", () => {
-    window.location.href = "/src/index.html"
+    window.location.href = "https://bruhvicentee.github.io/netflix-clone/index.html"
   })
 }
